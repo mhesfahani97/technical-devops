@@ -1,0 +1,421 @@
+ Health check...
+{"status":"healthy","service":"devops-interview-api"}
+➡️ HTTP Status: 200
+-----------------------------------------------------
+ Creating user...
+ Created user with ID: 12
+-----------------------------------------------------
+ Fetching all users...
+[
+  {
+    "email": "test@example.com",
+    "first_name": "John",
+    "last_name": "Doe",
+    "is_active": true,
+    "id": 1,
+    "created_at": "2025-07-12T15:04:30.594150",
+    "updated_at": "2025-07-12T15:04:30.594164"
+  },
+  {
+    "email": "user_1@example.com",
+    "first_name": "sunt aut f",
+    "last_name": "External",
+    "is_active": true,
+    "id": 2,
+    "created_at": "2025-07-12T15:04:31.222196",
+    "updated_at": "2025-07-12T15:04:31.222217"
+  },
+  {
+    "email": "user2@test.com",
+    "first_name": "User2",
+    "last_name": "Test2",
+    "is_active": true,
+    "id": 5,
+    "created_at": "2025-07-12T15:04:33.275622",
+    "updated_at": "2025-07-12T15:04:33.275646"
+  },
+  {
+    "email": "user3@test.com",
+    "first_name": "User3",
+    "last_name": "Test3",
+    "is_active": true,
+    "id": 6,
+    "created_at": "2025-07-12T15:04:33.285945",
+    "updated_at": "2025-07-12T15:04:33.285963"
+  },
+  {
+    "email": "user4@test.com",
+    "first_name": "User4",
+    "last_name": "Test4",
+    "is_active": true,
+    "id": 7,
+    "created_at": "2025-07-12T15:04:33.294768",
+    "updated_at": "2025-07-12T15:04:33.294787"
+  },
+  {
+    "email": "user0@test.com",
+    "first_name": "Updated3",
+    "last_name": "Test0",
+    "is_active": true,
+    "id": 3,
+    "created_at": "2025-07-12T15:04:33.241457",
+    "updated_at": "2025-07-12T15:04:33.241477"
+  },
+  {
+    "email": "user1@test.com",
+    "first_name": "Updated4",
+    "last_name": "Test1",
+    "is_active": true,
+    "id": 4,
+    "created_at": "2025-07-12T15:04:33.258644",
+    "updated_at": "2025-07-12T15:04:33.258665"
+  },
+  {
+    "email": "dependent@test.com",
+    "first_name": "Updated",
+    "last_name": "Test",
+    "is_active": true,
+    "id": 8,
+    "created_at": "2025-07-12T15:04:33.610252",
+    "updated_at": "2025-07-12T15:04:33.610272"
+  },
+  {
+    "email": "random@test.com",
+    "first_name": "Random",
+    "last_name": "User",
+    "is_active": true,
+    "id": 9,
+    "created_at": "2025-07-12T15:04:33.683299",
+    "updated_at": "2025-07-12T15:04:33.683318"
+  },
+  {
+    "email": "testuser@example.com",
+    "first_name": "Test",
+    "last_name": "User",
+    "is_active": true,
+    "id": 12,
+    "created_at": "2025-07-12T15:12:01.228284",
+    "updated_at": "2025-07-12T15:12:01.228299"
+  }
+]
+-----------------------------------------------------
+ Getting user by ID 12...
+{
+  "email": "testuser@example.com",
+  "first_name": "Test",
+  "last_name": "User",
+  "is_active": true,
+  "id": 12,
+  "created_at": "2025-07-12T15:12:01.228284",
+  "updated_at": "2025-07-12T15:12:01.228299",
+  "posts": []
+}
+-----------------------------------------------------
+ Updating user 12...
+{
+  "email": "testuser@example.com",
+  "first_name": "UpdatedName",
+  "last_name": "User",
+  "is_active": true,
+  "id": 12,
+  "created_at": "2025-07-12T15:12:01.228284",
+  "updated_at": "2025-07-12T15:12:01.228299"
+}
+-----------------------------------------------------
+ Creating post for user 12...
+ Created post with ID: 19
+-----------------------------------------------------
+ Fetching all posts...
+[
+  {
+    "title": "Post 0 by User 4",
+    "content": "This is content for post 0",
+    "is_published": false,
+    "id": 4,
+    "created_at": "2025-07-12T15:04:33.388094",
+    "updated_at": "2025-07-12T15:04:33.388118",
+    "author_id": 4,
+    "author": {
+      "email": "user1@test.com",
+      "first_name": "Updated4",
+      "last_name": "Test1",
+      "is_active": true,
+      "id": 4,
+      "created_at": "2025-07-12T15:04:33.258644",
+      "updated_at": "2025-07-12T15:04:33.258665"
+    }
+  },
+  {
+    "title": "Post 1 by User 4",
+    "content": "This is content for post 1",
+    "is_published": false,
+    "id": 5,
+    "created_at": "2025-07-12T15:04:33.402088",
+    "updated_at": "2025-07-12T15:04:33.402106",
+    "author_id": 4,
+    "author": {
+      "email": "user1@test.com",
+      "first_name": "Updated4",
+      "last_name": "Test1",
+      "is_active": true,
+      "id": 4,
+      "created_at": "2025-07-12T15:04:33.258644",
+      "updated_at": "2025-07-12T15:04:33.258665"
+    }
+  },
+  {
+    "title": "Post 2 by User 4",
+    "content": "This is content for post 2",
+    "is_published": false,
+    "id": 6,
+    "created_at": "2025-07-12T15:04:33.415325",
+    "updated_at": "2025-07-12T15:04:33.415342",
+    "author_id": 4,
+    "author": {
+      "email": "user1@test.com",
+      "first_name": "Updated4",
+      "last_name": "Test1",
+      "is_active": true,
+      "id": 4,
+      "created_at": "2025-07-12T15:04:33.258644",
+      "updated_at": "2025-07-12T15:04:33.258665"
+    }
+  },
+  {
+    "title": "Post 0 by User 5",
+    "content": "This is content for post 0",
+    "is_published": false,
+    "id": 7,
+    "created_at": "2025-07-12T15:04:33.427718",
+    "updated_at": "2025-07-12T15:04:33.427743",
+    "author_id": 5,
+    "author": {
+      "email": "user2@test.com",
+      "first_name": "User2",
+      "last_name": "Test2",
+      "is_active": true,
+      "id": 5,
+      "created_at": "2025-07-12T15:04:33.275622",
+      "updated_at": "2025-07-12T15:04:33.275646"
+    }
+  },
+  {
+    "title": "Post 1 by User 5",
+    "content": "This is content for post 1",
+    "is_published": false,
+    "id": 8,
+    "created_at": "2025-07-12T15:04:33.438307",
+    "updated_at": "2025-07-12T15:04:33.438325",
+    "author_id": 5,
+    "author": {
+      "email": "user2@test.com",
+      "first_name": "User2",
+      "last_name": "Test2",
+      "is_active": true,
+      "id": 5,
+      "created_at": "2025-07-12T15:04:33.275622",
+      "updated_at": "2025-07-12T15:04:33.275646"
+    }
+  },
+  {
+    "title": "Post 2 by User 5",
+    "content": "This is content for post 2",
+    "is_published": false,
+    "id": 9,
+    "created_at": "2025-07-12T15:04:33.446751",
+    "updated_at": "2025-07-12T15:04:33.446769",
+    "author_id": 5,
+    "author": {
+      "email": "user2@test.com",
+      "first_name": "User2",
+      "last_name": "Test2",
+      "is_active": true,
+      "id": 5,
+      "created_at": "2025-07-12T15:04:33.275622",
+      "updated_at": "2025-07-12T15:04:33.275646"
+    }
+  },
+  {
+    "title": "Post 0 by User 6",
+    "content": "This is content for post 0",
+    "is_published": false,
+    "id": 10,
+    "created_at": "2025-07-12T15:04:33.462993",
+    "updated_at": "2025-07-12T15:04:33.463010",
+    "author_id": 6,
+    "author": {
+      "email": "user3@test.com",
+      "first_name": "User3",
+      "last_name": "Test3",
+      "is_active": true,
+      "id": 6,
+      "created_at": "2025-07-12T15:04:33.285945",
+      "updated_at": "2025-07-12T15:04:33.285963"
+    }
+  },
+  {
+    "title": "Post 1 by User 6",
+    "content": "This is content for post 1",
+    "is_published": false,
+    "id": 11,
+    "created_at": "2025-07-12T15:04:33.480255",
+    "updated_at": "2025-07-12T15:04:33.480278",
+    "author_id": 6,
+    "author": {
+      "email": "user3@test.com",
+      "first_name": "User3",
+      "last_name": "Test3",
+      "is_active": true,
+      "id": 6,
+      "created_at": "2025-07-12T15:04:33.285945",
+      "updated_at": "2025-07-12T15:04:33.285963"
+    }
+  },
+  {
+    "title": "Post 2 by User 6",
+    "content": "This is content for post 2",
+    "is_published": false,
+    "id": 12,
+    "created_at": "2025-07-12T15:04:33.496178",
+    "updated_at": "2025-07-12T15:04:33.496196",
+    "author_id": 6,
+    "author": {
+      "email": "user3@test.com",
+      "first_name": "User3",
+      "last_name": "Test3",
+      "is_active": true,
+      "id": 6,
+      "created_at": "2025-07-12T15:04:33.285945",
+      "updated_at": "2025-07-12T15:04:33.285963"
+    }
+  },
+  {
+    "title": "Post 0 by User 7",
+    "content": "This is content for post 0",
+    "is_published": false,
+    "id": 13,
+    "created_at": "2025-07-12T15:04:33.508500",
+    "updated_at": "2025-07-12T15:04:33.508511",
+    "author_id": 7,
+    "author": {
+      "email": "user4@test.com",
+      "first_name": "User4",
+      "last_name": "Test4",
+      "is_active": true,
+      "id": 7,
+      "created_at": "2025-07-12T15:04:33.294768",
+      "updated_at": "2025-07-12T15:04:33.294787"
+    }
+  },
+  {
+    "title": "Post 1 by User 7",
+    "content": "This is content for post 1",
+    "is_published": false,
+    "id": 14,
+    "created_at": "2025-07-12T15:04:33.521338",
+    "updated_at": "2025-07-12T15:04:33.521356",
+    "author_id": 7,
+    "author": {
+      "email": "user4@test.com",
+      "first_name": "User4",
+      "last_name": "Test4",
+      "is_active": true,
+      "id": 7,
+      "created_at": "2025-07-12T15:04:33.294768",
+      "updated_at": "2025-07-12T15:04:33.294787"
+    }
+  },
+  {
+    "title": "Post 2 by User 7",
+    "content": "This is content for post 2",
+    "is_published": false,
+    "id": 15,
+    "created_at": "2025-07-12T15:04:33.532577",
+    "updated_at": "2025-07-12T15:04:33.532594",
+    "author_id": 7,
+    "author": {
+      "email": "user4@test.com",
+      "first_name": "User4",
+      "last_name": "Test4",
+      "is_active": true,
+      "id": 7,
+      "created_at": "2025-07-12T15:04:33.294768",
+      "updated_at": "2025-07-12T15:04:33.294787"
+    }
+  },
+  {
+    "title": "Dependent Post",
+    "content": "This post depends on previous tests",
+    "is_published": false,
+    "id": 16,
+    "created_at": "2025-07-12T15:04:33.635979",
+    "updated_at": "2025-07-12T15:04:33.636025",
+    "author_id": 8,
+    "author": {
+      "email": "dependent@test.com",
+      "first_name": "Updated",
+      "last_name": "Test",
+      "is_active": true,
+      "id": 8,
+      "created_at": "2025-07-12T15:04:33.610252",
+      "updated_at": "2025-07-12T15:04:33.610272"
+    }
+  },
+  {
+    "title": "My First Post",
+    "content": "This is a test post.",
+    "is_published": false,
+    "id": 19,
+    "created_at": "2025-07-12T15:12:01.288619",
+    "updated_at": "2025-07-12T15:12:01.288627",
+    "author_id": 12,
+    "author": {
+      "email": "testuser@example.com",
+      "first_name": "UpdatedName",
+      "last_name": "User",
+      "is_active": true,
+      "id": 12,
+      "created_at": "2025-07-12T15:12:01.228284",
+      "updated_at": "2025-07-12T15:12:01.228299"
+    }
+  }
+]
+-----------------------------------------------------
+ Getting post by ID 19...
+{
+  "title": "My First Post",
+  "content": "This is a test post.",
+  "is_published": false,
+  "id": 19,
+  "created_at": "2025-07-12T15:12:01.288619",
+  "updated_at": "2025-07-12T15:12:01.288627",
+  "author_id": 12,
+  "author": {
+    "email": "testuser@example.com",
+    "first_name": "UpdatedName",
+    "last_name": "User",
+    "is_active": true,
+    "id": 12,
+    "created_at": "2025-07-12T15:12:01.228284",
+    "updated_at": "2025-07-12T15:12:01.228299"
+  }
+}
+-----------------------------------------------------
+ Updating post 19...
+{
+  "title": "Updated Post Title",
+  "content": "This is a test post.",
+  "is_published": true,
+  "id": 19,
+  "created_at": "2025-07-12T15:12:01.288619",
+  "updated_at": "2025-07-12T15:12:01.288627",
+  "author_id": 12
+}
+-----------------------------------------------------
+ Deleting post 19...
+ Post deleted
+-----------------------------------------------------
+ Deleting user 12...
+ User deleted
+-----------------------------------------------------
+ All tests completed.

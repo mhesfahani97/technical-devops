@@ -21,3 +21,37 @@ You need to set up deployment for a simple FastAPI service that connects to Post
   - PostgreSQL database
   - Nginx reverse proxy
 - Write an Nginx configuration for the FastAPI service
+
+---
+
+## Interview Answer
+
+---
+
+### ✅ Final Task Completion Table
+
+| **Component**                            | **Description**                                                     | **Status** |
+| ---------------------------------------- | ------------------------------------------------------------------- | ---------- |
+| **CI/CD: Test Stage**                    | Runs Python tests using `pytest` in GitLab CI                       | ✅ Done     |
+| **CI/CD: Build Stage**                   | Builds Docker image and pushes to GitLab Container Registry         | ✅ Done     |
+| **CI/CD: Deploy Stage**                  | Runs `docker compose up -d` to start the stack on staging           | ✅ Done     |
+| **Docker Compose Setup**                 | Defines `app`, `db`, and `nginx` services with volumes and networks | ✅ Done     |
+| **PostgreSQL Service**                   | Configured and connected via environment variables                  | ✅ Done     |
+| **FastAPI App Dockerfile**               | Functional REST API with Users and Posts                            | ✅ Done     |
+| **NGINX Reverse Proxy**                  | Forwards HTTP traffic to FastAPI service at port `8000`             | ✅ Done     |
+| **Nginx Configuration File**             | Includes reverse proxy and headers                                  | ✅ Done     |
+| **GitLab Runner Tags**                   | Runner uses `tags: [stage]` to control deployment environment       | ✅ Done     |
+| **Branch Restriction**                   | `only: [main]` ensures deploy only from main branch                 | ✅ Done     |
+| **Test Coverage of API (curl / pytest)** | Manual and CI-tested with realistic endpoint calls                  | ✅ Done     |
+
+---
+
+### ✅ Pipeline Stages
+![]()
+
+---
+
+### ✅ Manual Curl Testing
+
+- **test_api.sh**, manual testing commands by curl.
+- **test_api_result.txt**, the result of manual testing commands.
