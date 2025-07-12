@@ -20,7 +20,7 @@ build-image:
   variables:
     APP_NAME: "app"
   script:
-    - docker build -t "$IMAGE_TAG" "$APP_NAME"
+    - docker build -t "$IMAGE_TAG" .
     - docker push "$IMAGE_TAG"
   tags: [stage]
   except:
