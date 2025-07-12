@@ -27,7 +27,7 @@ build-image:
 
 test-app:
   stage: test
-  image: docker.arvancloud.ir/python:13
+  image: docker.arvancloud.ir/python:3.13
   script:
     - pip install poetry
     - poetry config virtualenvs.create false
