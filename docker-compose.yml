@@ -5,7 +5,6 @@ services:
     container_name: app
     hostname: app
     restart: always
-      ## git ignore
     environment:
       APP_TITLE: ${APP_TITLE}
       APP_DESCRIPTION: ${APP_DESCRIPTION}
@@ -23,7 +22,7 @@ services:
     depends_on:
       - db
     networks:
-      - app_net
+      - app
 
   db:
     image: docker.arvancloud.ir/postgres:15-alpine
@@ -36,16 +35,15 @@ services:
       POSTGRES_DB: ${DB_DATABASE}
     volumes:
       - db_data:/var/lib/postgresql/data
-        #### port mismatch??????
     expose:
       - "${DB_PORT}"
     networks:
-      - app_net
+      - app
 
 
 networks:
-  app_net:
-    name: app_net
+  app:
+    name: app
 
 volumes:
   db_data:
