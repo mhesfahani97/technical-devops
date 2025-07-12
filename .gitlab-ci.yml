@@ -28,11 +28,13 @@ build-image:
 test-app:
   stage: test
   image: docker.arvancloud.ir/python:3.13
+  before_script: []
   script:
     - pip install poetry
     - poetry config virtualenvs.create false
     - poetry install --with=dev
     - pytest tests/
+  after_script: []
 
 deploy-app:
   stage: deploy
