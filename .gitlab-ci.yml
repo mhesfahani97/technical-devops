@@ -1,6 +1,6 @@
 stages:
   - build
-    #  - test
+  - test
   - deploy
 
 variables:
@@ -21,14 +21,18 @@ build-image:
   script:
     - docker build -t "$IMAGE_TAG" .
     - docker push "$IMAGE_TAG"
-  tags: [stage]
   except:
     - schedules
   retry: 2
 
-    #test-app:
-    #  stage: test
-    #
+test-app:
+  stage: test
+  image: docker.arvancloud.ir/python:13
+  script:
+    - pip install poetry
+    - poetry config virtualenvs.create false
+    - poetry install --with=dev
+    - pytest tests/
 
 deploy-app:
   stage: deploy
@@ -37,5 +41,4 @@ deploy-app:
     - docker images | grep "$DOCKER_REGISTRY/$CI_PROJECT_PATH" | awk '{print $3}' | xargs docker rmi -f || true
     - docker compose up -d 
   after_script: []
-
 
