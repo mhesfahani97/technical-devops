@@ -1,0 +1,29 @@
+---
+services:
+  app:
+
+services:
+  db:
+    image: docker.arvancloud.ir/postgres:15-alpine
+    container_name: postgresql-${HOSTNAME}
+    hostname: postgresql-${HOSTNAME}
+    restart: ${RESTART_POLICY}
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "${DB_PORT}:5432"
+    networks:
+      - app_net
+
+
+networks:
+  app_net:
+    name: app_net
+
+volumes:
+  db_data:
+    name: db_data
