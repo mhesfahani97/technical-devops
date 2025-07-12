@@ -6,7 +6,7 @@ USER_FIRST="Test"
 USER_LAST="User"
 
 echo " Health check..."
-curl -s -w "\n➡️ HTTP Status: %{http_code}\n" "$BASE_URL/health"
+curl -s -w "\n HTTP Status: %{http_code}\n" "$BASE_URL/health"
 echo "-----------------------------------------------------"
 
 echo " Creating user..."

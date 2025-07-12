@@ -1,6 +1,6 @@
  Health check...
 {"status":"healthy","service":"devops-interview-api"}
-➡️ HTTP Status: 200
+ HTTP Status: 200
 -----------------------------------------------------
  Creating user...
  Created user with ID: 12
