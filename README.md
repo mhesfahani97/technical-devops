@@ -47,7 +47,7 @@ You need to set up deployment for a simple FastAPI service that connects to Post
 ---
 
 ### ✅ Pipeline Stages
-![]()
+![](http://github.com/mhesfahani97/technical-devops/blob/main/images/pipeline.png)
 
 ---
 
