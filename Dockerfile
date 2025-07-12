@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM docker.arvancloud.ir/python:3.11
 
 WORKDIR /app
 
@@ -11,6 +11,7 @@ RUN poetry config virtualenvs.create false \
 COPY devops_interview /app/devops_interview
 
 EXPOSE 5000
+
 # in code the port is 8000 and not 5000
 CMD ["uvicorn", "devops_interview.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 
