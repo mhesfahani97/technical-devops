@@ -4,12 +4,11 @@ stages:
   - test
 
 variables:
-  VERSION: "1.0.0"
   IMAGE_TAG: "$CI_REGISTRY/$CI_PROJECT_PATH/$APP_NAME:$CI_COMMIT_SHORT_SHA"
   APP_NAME: "app"
 
 default:
-  image: gitlab:8050/arvan/runner-images:dind
+  image: docker.arvancloud.ir/docker:dind
   tags: [stage]
   before_script:
     - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
@@ -25,6 +24,16 @@ build-image:
     - schedules
   retry: 2
 
+deploy-app:
+  stage: deploy
+  only:
+    - main
+  script:
+    - docker compose down app || true
+    - docker images | grep "$DOCKER_REGISTRY/$CI_PROJECT_PATH" | awk '{print $3}' | xargs docker rmi -f || true
+    - docker compose up -d 
+  after_script: []
+
 test-app:
   stage: test
   image: docker.arvancloud.ir/python:3.13
@@ -35,12 +44,3 @@ test-app:
     - poetry install
     - pytest tests/
   after_script: []
-
-deploy-app:
-  stage: deploy
-  script:
-    - docker compose down app || true
-    - docker images | grep "$DOCKER_REGISTRY/$CI_PROJECT_PATH" | awk '{print $3}' | xargs docker rmi -f || true
-    - docker compose up -d 
-  after_script: []
-
