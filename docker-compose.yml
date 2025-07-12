@@ -35,8 +35,9 @@ services:
       POSTGRES_DB: ${DB_DATABASE}
     volumes:
       - db_data:/var/lib/postgresql/data
-    expose:
-      - "${DB_PORT}"
+    # mapping port needs for test section
+    ports:
+      - "${DB_PORT}:${DB_PORT}"
     networks:
       - app
 
